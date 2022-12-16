@@ -70,8 +70,31 @@ main h2{
     font-size: 50px;
 }
 
+.grid{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    /* border: 2px dashed black; */
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.grid .cell{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    text-align: center;
+    line-height: 60px;
+    vertical-align: middle;
+}
+.cell.clicked{
+    background-color: dodgerblue;
+}
+
 /* Footer */
 footer {
     display: flex;
     align-items: center;
+    padding: 20px;
 }
