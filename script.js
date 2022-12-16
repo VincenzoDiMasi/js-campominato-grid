@@ -19,7 +19,13 @@ Al click sulla cella, stampiamo il numero della cella cliccata in console,
 poi coloriamo la cella d'azzurro!
 */
 
-
+// Creo funzione per generare celle
+function createCell(number){
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    cell.append(number);
+    return cell;
+}
 
 
 // Prendo elementi dal DOM
@@ -27,3 +33,28 @@ const button = document.querySelector('.btn');
 const container = document.querySelector('.container');
 const grid = document.querySelector('.grid');
 const h2 = document.querySelector('h2');
+
+const rows = 10;
+const cols = 10;
+const totalCells = rows * cols; 
+
+
+// Creo event listener al button
+button.addEventListener('click', function(){
+
+    // Rimuovo h2
+    container.removeChild(h2);
+
+    // Creo ciclo per aggiungere le celle
+    for(let i = 1 ; i <= totalCells; i++){
+        const cell = createCell(i);
+        
+        cell.addEventListener('click', function(){
+            cell.classList.toggle('clicked');
+            console.log('cella n:' + i);
+        });
+        grid.appendChild(cell);
+    }
+    
+    
+});
