@@ -19,18 +19,11 @@ Al click sulla cella, stampiamo il numero della cella cliccata in console,
 poi coloriamo la cella d'azzurro!
 */
 
-// Creo funzione per generare celle
-function createCell(number){
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    cell.append(number);
-    return cell;
-}
+
 
 
 // Prendo elementi dal DOM
 const button = document.querySelector('.btn');
 const container = document.querySelector('.container');
-const h2 = document.querySelector('h2');
 const grid = document.querySelector('.grid');
-
+const h2 = document.querySelector('h2');
